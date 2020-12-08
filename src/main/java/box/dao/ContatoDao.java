@@ -28,7 +28,7 @@ public class ContatoDao {
 			insert.setString(1, contato.getNome());
 			insert.setString(2, contato.getEmail());
 			insert.setString(3, contato.getEndereco());
-			insert.setDate(4, new Date(contato.getDataNascimento().getTimeInMillis()));
+			insert.setDate(4, contato.getDataNascimento());
 
 			// insert.execute();
 			insert.executeUpdate();
