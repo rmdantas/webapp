@@ -1,6 +1,6 @@
 package box.modelo;
 
-import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Entidade Contato
@@ -14,16 +14,16 @@ public class Contato {
 	private String nome;
 	private String email;
 	private String endereco;
-	private Calendar dataNascimento;
+	private Date dataNascimento;
 
 	public Contato() {
 	}
 
-	public Contato(String nome, String email, String endereco, Calendar calendar) {
+	public Contato(String nome, String email, String endereco, Date dataNascimento) {
 		this.nome = nome;
 		this.email = email;
 		this.endereco = endereco;
-		this.dataNascimento = calendar;
+		this.dataNascimento = dataNascimento;
 	}
 
 	public Long getIdContato() {
@@ -58,11 +58,11 @@ public class Contato {
 		this.endereco = endereco;
 	}
 
-	public Calendar getDataNascimento() {
+	public Date getDataNascimento() {
 		return dataNascimento;
 	}
 
-	public void setDataNascimento(Calendar dataNascimento) {
+	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 
