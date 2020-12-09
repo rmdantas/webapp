@@ -1,6 +1,5 @@
 package box.modelo;
 
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -20,11 +19,11 @@ public class Contato {
 	public Contato() {
 	}
 
-	public Contato(String nome, String email, String endereco, Date calendar) {
+	public Contato(String nome, String email, String endereco, Date dataNascimento) {
 		this.nome = nome;
 		this.email = email;
 		this.endereco = endereco;
-		this.dataNascimento = calendar;
+		this.dataNascimento = dataNascimento;
 	}
 
 	public Long getIdContato() {
