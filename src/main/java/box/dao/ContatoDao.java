@@ -3,7 +3,10 @@ package box.dao;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import box.jdbc.ConnectionFactory;
 import box.modelo.Contato;
@@ -39,4 +42,36 @@ public class ContatoDao {
 			throw new RuntimeException("Erro ao inserir um conteudo no banco de dados");
 		}
 	}
+
+	// Listando os contatos
+	public List<Contato> getLista() {
+		try {
+			List<Contato> contatos = new ArrayList<>();
+			String sql = "select * from contatos";
+
+			PreparedStatement select = connection.prepareStatement(sql);
+			ResultSet rs = select.executeQuery();
+
+			while (rs.next()) {
+
+				Contato contato = new Contato();
+
+				contato.setIdContato(rs.getLong("id_usuario"));
+				contato.setNome(rs.getString("nome"));
+				contato.setEmail(rs.getString("email"));
+				contato.setEndereco(rs.getString("endereco"));
+				contato.setDataNascimento(rs.getDate("dataNascimento"));
+
+				contatos.add(contato);
+			}
+
+			rs.close();
+			select.close();
+			return contatos;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException("Erro ao criar uma lista de usuários");
+		}
+	}
+
 }

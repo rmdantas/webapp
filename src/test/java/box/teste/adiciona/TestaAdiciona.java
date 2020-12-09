@@ -15,7 +15,7 @@ public class TestaAdiciona {
 
 		Date data = new Date();
 		
-		Contato contato = new Contato("Gabriel", "gabriel@gmail.com", "Rua ministro godoi", data);
+		Contato contato = new Contato("Maria", "Maria@gmail.com", "Rua erva das virgens", data);
 
 		ContatoDao dao = new ContatoDao();
 
